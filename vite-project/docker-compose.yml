@@ -1,0 +1,47 @@
+# services:
+#   vite-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - NODE_ENV=development
+#     command: npm run dev -- --host
+
+# services:
+#   vite-app:
+#     image: node:22-alpine
+#     container_name: vite-project
+#     working_dir: /app
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+#     restart: unless-stopped
+
+version: '3.8'
+
+services:
+  frontend:
+    image: node:22-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vite-vue-app
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    restart: unless-stopped
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
