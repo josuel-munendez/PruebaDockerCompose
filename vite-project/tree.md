@@ -1,6 +1,6 @@
 # File Tree: ViteProject
 
-**Generated:** 6/3/2026, 1:37:13 PM
+**Generated:** 6/3/2026, 3:40:51 PM
 **Root Path:** `c:\Users\Aprendiz\Documents\ViteProject`
 [text](https://github.com/josuel-munendez/PruebaDockerCompose)
 
